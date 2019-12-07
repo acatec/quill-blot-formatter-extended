@@ -93,8 +93,8 @@ export default class DefaultAligner implements Aligner {
     this.setAnyStyle(el, {
       display: '',
       float: '',
-      margin: '',
-      'max-height': '0 .4em 0 .4em',
+      margin: '0 .4em 0 .4em',
+      'max-height': '',
     });
   }
 

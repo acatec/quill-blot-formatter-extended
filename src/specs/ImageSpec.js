@@ -13,6 +13,7 @@ export default class ImageSpec extends BlotSpec {
 
   init() {
     this.formatter.quill.root.addEventListener('click', this.onClick);
+    document.addEventListener('drop', this.onDrop());
   }
 
   getTargetElement(): ?HTMLElement {
@@ -31,5 +32,9 @@ export default class ImageSpec extends BlotSpec {
 
     this.img = el;
     this.formatter.show(this);
+  };
+
+  onDrop = () => {
+    this.formatter.hide();
   };
 }

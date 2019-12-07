@@ -50,7 +50,12 @@ export default class DefaultAligner implements Aligner {
         icon: options.icons.right,
         apply: (el: HTMLElement) => {
           this.setAlignment(el, INLINE);
-          this.setAnyStyle(el, { 'max-height': '2rem', float: 'none' });
+          this.setAnyStyle(el, {
+            'max-height': '2rem',
+            float: 'none',
+            display: 'inline',
+            margin: '0 .4em 0 .4em',
+          });
         },
       },
     };

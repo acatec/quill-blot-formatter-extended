@@ -5,6 +5,7 @@ import BlotFormatter from '../BlotFormatter';
 
 export default class ImageSpec extends BlotSpec {
   img: ?HTMLElement;
+  dragged: ?HTMLElement;
 
   constructor(formatter: BlotFormatter) {
     super(formatter);
@@ -39,12 +40,13 @@ export default class ImageSpec extends BlotSpec {
 
   onDrop = (event: DragEvent) => {
     const childImages = event.srcElement.getElementsByTagName('img');
-    console.log('onDrop')
-    console.log(childImages)
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < childImages.length; i++) {
-      childImages[i].style.setProperty('font-size', '');
-    }
+    setTimeout(() => {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < childImages.length; i++) {
+        childImages[i].style.setProperty('font-size', '');
+        childImages[i].style.setProperty('border', '');
+      }
+    }, 10);
     this.formatter.hide(); // todo remove img style fontsize
   };
 
@@ -53,6 +55,7 @@ export default class ImageSpec extends BlotSpec {
     if (!(el instanceof HTMLElement) || el.tagName !== 'IMG') {
       return;
     }
+    this.dragged = el;
     el.style.setProperty('border', '');
     el.style.setProperty('font-size', '');
     console.log('onDragStart');

@@ -32,12 +32,16 @@ export default class ImageSpec extends BlotSpec {
     }
 
     this.img = el; // todo draw border
-    this.img.style.setProperty('border', '1px dashed #ccc;');
+    this.img.style.setProperty('border', '1px dashed #ccc');
     this.formatter.show(this);
   };
 
-  onDrop = () => {
-    console.log(this.img);
+  onDrop = (event: DragEvent) => {
+    const childImages = event.srcElement.getElementsByTagName('img')
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < childImages.length; i++) {
+      childImages.style.setProperty('font-size', '');
+    }
     this.formatter.hide(); // todo remove img style fontsize
   };
 }

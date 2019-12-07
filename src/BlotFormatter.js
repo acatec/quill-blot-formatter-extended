@@ -83,6 +83,7 @@ export default class BlotFormatter {
 
     const overlayTarget = this.currentSpec.getOverlayElement();
     if (!overlayTarget) {
+      this.hide();
       return;
     }
 
@@ -91,6 +92,7 @@ export default class BlotFormatter {
 
     if (!specRect) {
       this.hide();
+      return;
     }
 
     const parentRect = parent.getBoundingClientRect();

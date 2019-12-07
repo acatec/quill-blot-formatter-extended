@@ -23,9 +23,9 @@ export default class BlotFormatter {
     this.actions = [];
     this.overlay = document.createElement('div');
     this.overlay.classList.add(this.options.overlay.className);
-    if (this.options.overlay.style) {
-      Object.assign(this.overlay.style, this.options.overlay.style);
-    }
+    // if (this.options.overlay.style) {
+    //   Object.assign(this.overlay.style, this.options.overlay.style);
+    // }
 
     // disable native image resizing on firefox
     document.execCommand('enableObjectResizing', false, 'false'); // eslint-disable-line no-undef
@@ -41,7 +41,7 @@ export default class BlotFormatter {
     this.currentSpec.setSelection();
     this.setUserSelect('none');
     this.quill.root.parentNode.appendChild(this.overlay);
-    this.repositionOverlay();
+    // this.repositionOverlay();
     this.createActions(spec);
   }
 
@@ -59,7 +59,7 @@ export default class BlotFormatter {
   }
 
   update() {
-    this.repositionOverlay();
+    // this.repositionOverlay();
     this.actions.forEach(action => action.onUpdate());
   }
 

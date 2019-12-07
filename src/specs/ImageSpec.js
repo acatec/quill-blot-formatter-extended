@@ -49,7 +49,13 @@ export default class ImageSpec extends BlotSpec {
   };
 
   onDragStart = (event: DragEvent) => {
+    const el = event.srcElement;
+    if (!(el instanceof HTMLElement) || el.tagName !== 'IMG') {
+      return;
+    }
+    el.style.setProperty('border', '');
+    el.style.setProperty('font-size', '');
     console.log('onDragStart');
-    console.log(event);
+    console.log(event.srcElement);
   };
 }

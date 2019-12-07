@@ -1,6 +1,6 @@
 {
   "name": "quill-blot-formatter-extended",
-  "version": "1.1.21",
+  "version": "1.1.22",
   "description": "a module for the Quill text editor to allow blots to be reformatted. Built in formatters: resize and realign.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

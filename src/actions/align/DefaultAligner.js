@@ -8,6 +8,7 @@ const LEFT_ALIGN = 'left';
 const CENTER_ALIGN = 'center';
 const RIGHT_ALIGN = 'right';
 const INLINE = 'inline';
+const REMOVE = 'remove';
 const SIZE_100 = 'size100';
 const SIZE_50 = 'size50';
 const SIZE_25 = 'size25';
@@ -66,9 +67,22 @@ export default class DefaultAligner implements Aligner {
         apply: (el: HTMLElement) => {
           this.setAlignment(el, INLINE);
           this.setAnyStyle(el, {
-            'max-height': '2rem',
-            float: 'none',
+            'max-height': '3em',
+            float: '',
             display: 'inline',
+            margin: '0 .4em 0 .4em',
+          });
+        },
+      },
+      [REMOVE]: {
+        name: REMOVE,
+        icon: options.icons.remove,
+        apply: (el: HTMLElement) => {
+          this.setAlignment(el, REMOVE);
+          this.setAnyStyle(el, {
+            'max-height': '',
+            float: '',
+            display: '',
             margin: '0 .4em 0 .4em',
           });
         },

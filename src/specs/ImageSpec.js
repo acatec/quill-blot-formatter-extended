@@ -21,6 +21,7 @@ export default class ImageSpec extends BlotSpec {
   }
 
   onHide() {
+    this.img.style.setProperty('border', '');
     this.img = null;
   }
 
@@ -30,11 +31,13 @@ export default class ImageSpec extends BlotSpec {
       return;
     }
 
-    this.img = el;
+    this.img = el; // todo draw border
+    this.img.style.setProperty('border', '1px dashed #ccc;');
     this.formatter.show(this);
   };
 
   onDrop = () => {
-    this.formatter.hide();
+    console.log(this.img);
+    this.formatter.hide(); // todo remove img style fontsize
   };
 }

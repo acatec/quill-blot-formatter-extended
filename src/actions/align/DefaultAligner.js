@@ -30,6 +30,7 @@ export default class DefaultAligner implements Aligner {
           this.setAnyStyle(el, {
             'max-height': '',
             float: 'left',
+            clear: 'both',
             display: 'inline',
             margin: '0 1em 1em 0',
             'font-size': '',
@@ -44,6 +45,7 @@ export default class DefaultAligner implements Aligner {
           this.setAnyStyle(el, {
             'max-height': '',
             float: '',
+            clear: '',
             display: 'block',
             margin: 'auto',
             'font-size': '',
@@ -58,6 +60,7 @@ export default class DefaultAligner implements Aligner {
           this.setAnyStyle(el, {
             'max-height': '',
             float: 'right',
+            clear: 'both',
             display: 'inline',
             margin: '0 0 1em 1em',
             'font-size': '',
@@ -72,6 +75,7 @@ export default class DefaultAligner implements Aligner {
           this.setAnyStyle(el, {
             'max-height': '3em',
             float: '',
+            clear: '',
             display: 'inline',
             margin: '0 .4em 0 .4em',
             'font-size': '',
@@ -97,6 +101,7 @@ export default class DefaultAligner implements Aligner {
     this.setAnyStyle(el, {
       display: '',
       float: '',
+      clear: '',
       margin: '0 .4em 0 .4em',
       'max-height': '',
       'font-size': '',

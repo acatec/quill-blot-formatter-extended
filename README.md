@@ -1,9 +1,9 @@
-# Quill Blot Formatter
+# Quill Blot Formatter Extended
 
 A [quill](https://quilljs.com/) module to format document [blots](https://github.com/quilljs/parchment#blots). Heavily inspired by [quill-image-resize-module](https://github.com/kensnyder/quill-image-resize-module). Out of the box supports resizing and realigning images and iframe videos, but can be easily extended using [`BlotSpec`](#blotspec) and [`Action`](#action).
 
 ## Demo
-[demo](https://codesandbox.io/s/4wnwllnnl9)
+[demo](https://codesandbox.io/s/old-flower-9yszx)
 
 ## Installation
 Using `yarn`:

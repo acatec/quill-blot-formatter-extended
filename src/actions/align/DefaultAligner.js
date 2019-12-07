@@ -26,7 +26,12 @@ export default class DefaultAligner implements Aligner {
         icon: options.icons.left,
         apply: (el: HTMLElement) => {
           this.setAlignment(el, LEFT_ALIGN);
-          this.setStyle(el, 'inline', 'left', '0 1em 1em 0');
+          this.setAnyStyle(el, {
+            'max-height': '',
+            float: 'left',
+            display: 'inline',
+            margin: '0 1em 1em 0',
+          });
         },
       },
       [CENTER_ALIGN]: {
@@ -34,7 +39,12 @@ export default class DefaultAligner implements Aligner {
         icon: options.icons.center,
         apply: (el: HTMLElement) => {
           this.setAlignment(el, CENTER_ALIGN);
-          this.setStyle(el, 'block', null, 'auto');
+          this.setAnyStyle(el, {
+            'max-height': '',
+            float: '',
+            display: 'block',
+            margin: 'auto',
+          });
         },
       },
       [RIGHT_ALIGN]: {
@@ -42,7 +52,12 @@ export default class DefaultAligner implements Aligner {
         icon: options.icons.right,
         apply: (el: HTMLElement) => {
           this.setAlignment(el, RIGHT_ALIGN);
-          this.setStyle(el, 'inline', 'right', '0 0 1em 1em');
+          this.setAnyStyle(el, {
+            'max-height': '',
+            float: 'right',
+            display: 'inline',
+            margin: '0 0 1em 1em',
+          });
         },
       },
       [INLINE]: {

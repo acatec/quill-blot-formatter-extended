@@ -88,12 +88,18 @@ export default class BlotFormatter {
 
     const parent: HTMLElement = this.quill.root.parentNode;
     const specRect = overlayTarget.getBoundingClientRect();
+
+    if (!specRect) {
+      this.hide();
+    }
+
     const parentRect = parent.getBoundingClientRect();
 
     Object.assign(this.overlay.style, {
       display: 'block',
       left: `${specRect.left - parentRect.left - 1 + parent.scrollLeft}px`,
       top: `${specRect.top - parentRect.top + parent.scrollTop}px`,
+      width: '150px',
       // width: `${specRect.width}px`,
       // height: `${specRect.height}px`,
     });

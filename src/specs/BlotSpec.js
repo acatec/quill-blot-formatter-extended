@@ -3,7 +3,7 @@
 import BlotFormatter from '../BlotFormatter';
 import Action from '../actions/Action';
 import AlignAction from '../actions/align/AlignAction';
-import ResizeAction from '../actions/ResizeAction';
+// import ResizeAction from '../actions/ResizeAction';
 import DeleteAction from '../actions/DeleteAction';
 
 export default class BlotSpec {
@@ -16,7 +16,8 @@ export default class BlotSpec {
   init(): void {}
 
   getActions(): Class<Action>[] {
-    return [AlignAction, ResizeAction, DeleteAction];
+    return [AlignAction, DeleteAction];
+    // return [AlignAction, ResizeAction, DeleteAction];
   }
 
   getTargetElement(): ?HTMLElement {

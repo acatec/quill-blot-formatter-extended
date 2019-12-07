@@ -8,7 +8,7 @@ export { default as AlignAction } from './actions/align/AlignAction';
 export { default as DefaultAligner } from './actions/align/DefaultAligner';
 export { default as DefaultToolbar } from './actions/align/DefaultToolbar';
 export { default as DeleteAction } from './actions/DeleteAction';
-export { default as ResizeAction } from './actions/ResizeAction';
+// export { default as ResizeAction } from './actions/ResizeAction';
 
 // specs
 export { default as BlotSpec } from './specs/BlotSpec';

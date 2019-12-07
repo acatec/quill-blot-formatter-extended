@@ -50,7 +50,7 @@ export default class DefaultAligner implements Aligner {
         icon: options.icons.right,
         apply: (el: HTMLElement) => {
           this.setAlignment(el, INLINE);
-          this.setAnyStyle(el, {"max-height":"2rem","float":"none"});
+          this.setAnyStyle(el, { 'max-height': '2rem', float: 'none' });
         },
       },
     };
@@ -83,9 +83,9 @@ export default class DefaultAligner implements Aligner {
 
   setAnyStyle(el: HTMLElement, options: { [string]: string }) {
     if (this.applyStyle) {
-      for (var prop in options) {
-        el.style.setProperty('prop', options[prop]);
-      }
+      options.forEach((value, key) => {
+        el.style.setProperty(key, value);
+      });
     }
   }
 }

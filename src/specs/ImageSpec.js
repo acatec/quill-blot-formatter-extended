@@ -14,6 +14,7 @@ export default class ImageSpec extends BlotSpec {
   init() {
     this.formatter.quill.root.addEventListener('click', this.onClick);
     document.addEventListener('drop', this.onDrop);
+    document.addEventListener('dragstart', this.onDragStart);
   }
 
   getTargetElement(): ?HTMLElement {
@@ -37,11 +38,18 @@ export default class ImageSpec extends BlotSpec {
   };
 
   onDrop = (event: DragEvent) => {
-    const childImages = event.srcElement.getElementsByTagName('img')
+    const childImages = event.srcElement.getElementsByTagName('img');
+    console.log('onDrop')
+    console.log(childImages)
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < childImages.length; i++) {
-      childImages.style.setProperty('font-size', '');
+      childImages[i].style.setProperty('font-size', '');
     }
     this.formatter.hide(); // todo remove img style fontsize
+  };
+
+  onDragStart = (event: DragEvent) => {
+    console.log('onDragStart');
+    console.log(event);
   };
 }

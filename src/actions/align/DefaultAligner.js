@@ -1,8 +1,8 @@
 // @flow
 
-import { Aligner } from './Aligner';
-import type { Alignment } from './Alignment';
-import type { AlignOptions } from '../../Options';
+import {Aligner} from './Aligner';
+import type {Alignment} from './Alignment';
+import type {AlignOptions} from '../../Options';
 
 const LEFT_ALIGN = 'left';
 const CENTER_ALIGN = 'center';
@@ -62,7 +62,12 @@ export default class DefaultAligner implements Aligner {
 
   clear(el: HTMLElement): void {
     el.removeAttribute(this.alignAttribute);
-    this.setStyle(el, null, null, null);
+    this.setAnyStyle(el, {
+      display: '',
+      float: '',
+      margin: '',
+      'max-height': '',
+    });
   }
 
   isAligned(el: HTMLElement, alignment: Alignment): boolean {
@@ -83,9 +88,9 @@ export default class DefaultAligner implements Aligner {
 
   setAnyStyle(el: HTMLElement, options: { [string]: string }) {
     if (this.applyStyle) {
-      options.forEach((value, key) => {
-        el.style.setProperty(key, value);
-      });
+      for (const prop in options) {
+        el.style.setProperty(prop, options[prop]);
+      }
     }
   }
 }

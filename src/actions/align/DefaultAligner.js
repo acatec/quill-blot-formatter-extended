@@ -7,6 +7,10 @@ import type { AlignOptions } from '../../Options';
 const LEFT_ALIGN = 'left';
 const CENTER_ALIGN = 'center';
 const RIGHT_ALIGN = 'right';
+const INLINE = 'inline';
+const SIZE_100 = 'size100';
+const SIZE_50 = 'size50';
+const SIZE_25 = 'size25';
 
 export default class DefaultAligner implements Aligner {
   alignments: { [string]: Alignment };
@@ -41,6 +45,14 @@ export default class DefaultAligner implements Aligner {
           this.setStyle(el, 'inline', 'right', '0 0 1em 1em');
         },
       },
+      [INLINE]: {
+        name: INLINE,
+        icon: options.icons.right,
+        apply: (el: HTMLElement) => {
+          this.setAlignment(el, INLINE);
+          this.setAnyStyle(el, {"max-height":"2rem","float":"none"});
+        },
+      },
     };
   }
 
@@ -66,6 +78,14 @@ export default class DefaultAligner implements Aligner {
       el.style.setProperty('display', display);
       el.style.setProperty('float', float);
       el.style.setProperty('margin', margin);
+    }
+  }
+
+  setAnyStyle(el: HTMLElement, options: { [string]: string }) {
+    if (this.applyStyle) {
+      for (var prop in options) {
+        el.style.setProperty('prop', options[prop]);
+      }
     }
   }
 }

@@ -78,13 +78,7 @@ export default class DefaultAligner implements Aligner {
         name: REMOVE,
         icon: options.icons.remove,
         apply: (el: HTMLElement) => {
-          this.setAlignment(el, REMOVE);
-          this.setAnyStyle(el, {
-            'max-height': '',
-            float: '',
-            display: '',
-            margin: '0 .4em 0 .4em',
-          });
+          this.clear(el);
         },
       },
     };
@@ -100,7 +94,7 @@ export default class DefaultAligner implements Aligner {
       display: '',
       float: '',
       margin: '',
-      'max-height': '',
+      'max-height': '0 .4em 0 .4em',
     });
   }
 

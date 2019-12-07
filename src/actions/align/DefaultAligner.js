@@ -62,7 +62,7 @@ export default class DefaultAligner implements Aligner {
       },
       [INLINE]: {
         name: INLINE,
-        icon: options.icons.right,
+        icon: options.icons.inline,
         apply: (el: HTMLElement) => {
           this.setAlignment(el, INLINE);
           this.setAnyStyle(el, {

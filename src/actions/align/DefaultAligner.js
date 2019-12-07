@@ -1,8 +1,8 @@
 // @flow
 
-import {Aligner} from './Aligner';
-import type {Alignment} from './Alignment';
-import type {AlignOptions} from '../../Options';
+import { Aligner} from './Aligner';
+import type { Alignment} from './Alignment';
+import type { AlignOptions} from '../../Options';
 
 const LEFT_ALIGN = 'left';
 const CENTER_ALIGN = 'center';
@@ -32,6 +32,7 @@ export default class DefaultAligner implements Aligner {
             float: 'left',
             display: 'inline',
             margin: '0 1em 1em 0',
+            'font-size': '',
           });
         },
       },
@@ -45,6 +46,7 @@ export default class DefaultAligner implements Aligner {
             float: '',
             display: 'block',
             margin: 'auto',
+            'font-size': '',
           });
         },
       },
@@ -58,6 +60,7 @@ export default class DefaultAligner implements Aligner {
             float: 'right',
             display: 'inline',
             margin: '0 0 1em 1em',
+            'font-size': '',
           });
         },
       },
@@ -71,6 +74,7 @@ export default class DefaultAligner implements Aligner {
             float: '',
             display: 'inline',
             margin: '0 .4em 0 .4em',
+            'font-size': '',
           });
         },
       },
@@ -95,6 +99,7 @@ export default class DefaultAligner implements Aligner {
       float: '',
       margin: '0 .4em 0 .4em',
       'max-height': '',
+      'font-size': '',
     });
   }
 

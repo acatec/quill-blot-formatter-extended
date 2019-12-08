@@ -24,7 +24,7 @@ export default class Resizer implements GroupInterface {
     this.variants = {
       [SIZE_25]: {
         name: SIZE_25,
-        icon: '25%',
+        icon: options.icons.size25,
         apply: (el: HTMLElement) => {
           this.setVariant(el, SIZE_25);
           this.setAnyStyle(el, {
@@ -35,7 +35,7 @@ export default class Resizer implements GroupInterface {
       },
       [SIZE_50]: {
         name: SIZE_50,
-        icon: '50%',
+        icon: options.icons.size50,
         apply: (el: HTMLElement) => {
           this.setVariant(el, SIZE_50);
           this.setAnyStyle(el, {
@@ -46,7 +46,7 @@ export default class Resizer implements GroupInterface {
       },
       [SIZE_100]: {
         name: SIZE_100,
-        icon: '100%',
+        icon: options.icons.size100,
         apply: (el: HTMLElement) => {
           this.setVariant(el, RIGHT_ALIGN);
           this.setAnyStyle(el, {

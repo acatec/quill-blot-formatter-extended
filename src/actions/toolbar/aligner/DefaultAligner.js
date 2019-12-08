@@ -74,6 +74,7 @@ export default class DefaultAligner implements GroupInterface {
           this.setAlignment(el, INLINE);
           this.setAnyStyle(el, {
             'max-height': '3em',
+            width: '',
             float: '',
             clear: '',
             display: 'inline',

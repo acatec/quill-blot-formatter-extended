@@ -119,9 +119,24 @@ const DefaultOptions: Options = {
       remove: `
         <svg width="300" height="300" id="svgcontent" overflow="visible" viewBox="0 -15 50 80"><path d="M24,0C10.7,0 0,10.7 0,24S10.7,48 24,48S48,37.3 48,24S37.3,0 24,0zM24,41C14.6,41 7,33.4 7,24C7,20.6 8,17.4 9.8,14.7L33.3,38.2C30.6,40 27.4,41 24,41zM38.2,33.3L14.7,9.8C17.4,8 20.6,7 24,7C33.4,7 41,14.6 41,24C41,27.4 40,30.6 38.2,33.3z" style="pointer-events:inherit" id="svg_2"></path></svg>
       `,
-      // remove: `
-      //   <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 -15 50 80"><path d="M30.1,24L47.4,6.7C48.2,5.9 48.2,4.6 47.4,3.8L44.2,0.6C43.4,-0.2 42.1,-0.2 41.3,0.6L24,17.9L6.7,0.6C5.9,-0.2 4.6,-0.2 3.8,0.6L0.6,3.8C-0.2,4.6 -0.2,5.9 0.6,6.7L17.9,24L0.6,41.3C-0.2,42.1 -0.2,43.4 0.6,44.2L3.8,47.4C4.6,48.2 5.9,48.2 6.7,47.4L24,30.1L41.3,47.4C42.1,48.2 43.4,48.2 44.2,47.4L47.4,44.2C48.2,43.4 48.2,42.1 47.4,41.3L30.1,24z" style="pointer-events:inherit" id="svg_2"></path></svg>
-      // `,
+      size25: `
+        <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
+        <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
+        25%
+      </text></svg>
+      `,
+      size50: `
+        <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
+        <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
+        50%
+      </text></svg>
+      `,
+      size100: `
+        <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
+        <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
+        100%
+      </text></svg>
+      `,
     },
 
     toolbar: {

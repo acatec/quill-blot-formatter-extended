@@ -113,8 +113,8 @@ export default class BlotFormatter {
     Object.assign(this.overlay.style, {
       display: 'block',
       left: `${specRect.left - parentRect.left - 1 + parent.scrollLeft}px`,
-      top: `${specRect.top - parentRect.top + parent.scrollTop}px`,
-      width: `${Math.max(specRect.width, 150)}px`,
+      top: `${specRect.top - parentRect.top + parent.scrollTop - 24}px`,
+      width: `${Math.max(specRect.width, 220)}px`,
       // width: `${specRect.width}px`,
       // height: `${specRect.height}px`,
     });

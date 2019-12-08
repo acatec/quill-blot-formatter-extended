@@ -5,6 +5,7 @@ import BlotFormatter from '../BlotFormatter';
 import Action from '../actions/Action';
 import AlignAction from '../actions/toolbar/aligner/AlignAction';
 import DeleteAction from '../actions/DeleteAction';
+import ResizeAction from '../actions/toolbar/resizer/ResizeAction';
 
 export default class ImageSpec extends BlotSpec {
   img: ?HTMLElement;
@@ -22,7 +23,7 @@ export default class ImageSpec extends BlotSpec {
   }
 
   getActions(): Class<Action>[] {
-    return [AlignAction, DeleteAction];
+    return [AlignAction, DeleteAction, ResizeAction];
     // return [AlignAction, ResizeAction, DeleteAction];
   }
 

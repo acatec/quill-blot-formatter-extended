@@ -2,28 +2,24 @@
 
 import Action from '../../Action';
 import BlotFormatter from '../../../BlotFormatter';
-import DefaultAligner from './DefaultAligner';
+import Resizer from './Resizer';
 // import { GroupInterface } from './../GroupInterface';
 import { Toolbar } from '../ToolbarInterface';
 import type { ToolbarInterface } from '../ToolbarInterface';
 // import DefaultToolbar from './DefaultToolbar';
 
-export default class AlignAction extends Action {
+export default class ResizeAction extends Action {
   toolbar: Toolbar;
 
   constructor(formatter: BlotFormatter, toolbar: ToolbarInterface) {
     super(formatter);
-    this.group = new DefaultAligner(formatter.options.align);
+    this.group = new Resizer(formatter.options.align);
     this.toolbar = toolbar;
 
-    // this.addButtons(formatter, toolbar, aligner);
-
-    // this.toolbar = new DefaultToolbar();
+    // this.addButtons(formatter, toolbar, aligner); // можно и тут
   }
 
   onCreate() {
-    // const toolbar = this.toolbar.create(this.formatter, this.aligner);
-    // this.formatter.overlay.appendChild(toolbar);
   }
 
   onDestroy() {

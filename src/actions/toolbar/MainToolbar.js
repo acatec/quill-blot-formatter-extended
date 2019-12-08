@@ -89,7 +89,7 @@ export default class MainToolbar implements ToolbarInterface {
       this.preselectButton(button, variant, this.formatter, group);
       this.addButtonStyle(button, i, this.formatter);
       this.buttons.push(button);
-      this.toolbar.appendChild(button);
+      toolbar.appendChild(button);
     });
   }
 

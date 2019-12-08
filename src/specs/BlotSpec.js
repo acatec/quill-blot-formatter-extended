@@ -2,7 +2,7 @@
 
 import BlotFormatter from '../BlotFormatter';
 import Action from '../actions/Action';
-import AlignAction from '../actions/align/AlignAction';
+import AlignAction from '../actions/toolbar/aligner/AlignAction';
 // import ResizeAction from '../actions/ResizeAction';
 import DeleteAction from '../actions/DeleteAction';
 

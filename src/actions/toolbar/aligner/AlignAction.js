@@ -3,19 +3,19 @@
 import Action from '../../Action';
 import BlotFormatter from '../../../BlotFormatter';
 import DefaultAligner from './DefaultAligner';
-import { Aligner } from './../GroupInterface';
+import { GroupInterface } from './../GroupInterface';
 import { Toolbar } from '../ToolbarInterface';
 import type { ToolbarInterface } from '../ToolbarInterface';
 // import DefaultToolbar from './DefaultToolbar';
 
 export default class AlignAction extends Action {
   toolbar: Toolbar;
-  aligner: Aligner;
 
   constructor(formatter: BlotFormatter, toolbar: ToolbarInterface) {
     super(formatter);
-    this.aligner = new DefaultAligner(formatter.options.align);
+    this.group = new DefaultAligner(formatter.options.align);
     this.toolbar = toolbar;
+
     // this.addButtons(formatter, toolbar, aligner);
 
     // this.toolbar = new DefaultToolbar();

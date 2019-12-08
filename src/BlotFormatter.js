@@ -5,6 +5,8 @@ import type { Options } from './Options';
 import DefaultOptions from './Options';
 import Action from './actions/Action';
 import BlotSpec from './specs/BlotSpec';
+// import type { Toolbar} from './actions/align/Toolbar';
+import type { ToolbarInterface } from './actions/toolbar/ToolbarInterface';
 
 const dontMerge = (destination: Array<any>, source: Array<any>) => source;
 
@@ -15,6 +17,8 @@ export default class BlotFormatter {
   specs: BlotSpec[];
   overlay: HTMLElement;
   actions: Action[];
+
+  toolbar: ToolbarInterface;
 
   constructor(quill: any, options: $Shape<Options> = {}) {
     this.quill = quill;
@@ -43,6 +47,8 @@ export default class BlotFormatter {
     this.quill.root.parentNode.appendChild(this.overlay);
     this.repositionOverlay();
     this.createActions(spec);
+    this.toolbar.create(this);
+    this.overlay.appendChild(this.toolbar);
   }
 
   hide() {
@@ -69,6 +75,10 @@ export default class BlotFormatter {
       action.onCreate();
       return action;
     });
+  }
+
+  getActions(): Action[] {
+    return this.actions;
   }
 
   destroyActions() {

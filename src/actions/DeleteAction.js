@@ -28,4 +28,8 @@ export default class DeleteAction extends Action {
       this.formatter.hide();
     }
   };
+
+  isOnToolbar(): boolean {
+    return false;
+  }
 }

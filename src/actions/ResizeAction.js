@@ -146,4 +146,8 @@ export default class ResizeAction extends Action {
     document.removeEventListener('mousemove', this.onDrag);
     document.removeEventListener('mouseup', this.onMouseUp);
   };
+
+  isOnToolbar(): boolean {
+    return false;
+  }
 }

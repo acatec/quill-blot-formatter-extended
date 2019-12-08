@@ -2,6 +2,9 @@
 
 import BlotSpec from './BlotSpec';
 import BlotFormatter from '../BlotFormatter';
+import Action from '../actions/Action';
+import AlignAction from '../actions/toolbar/aligner/AlignAction';
+import DeleteAction from '../actions/DeleteAction';
 
 export default class ImageSpec extends BlotSpec {
   img: ?HTMLElement;
@@ -16,6 +19,11 @@ export default class ImageSpec extends BlotSpec {
     this.formatter.quill.root.addEventListener('click', this.onClick);
     document.addEventListener('drop', this.onDrop);
     document.addEventListener('dragstart', this.onDragStart);
+  }
+
+  getActions(): Class<Action>[] {
+    return [AlignAction, DeleteAction];
+    // return [AlignAction, ResizeAction, DeleteAction];
   }
 
   getTargetElement(): ?HTMLElement {

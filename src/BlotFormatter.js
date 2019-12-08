@@ -7,6 +7,7 @@ import Action from './actions/Action';
 import BlotSpec from './specs/BlotSpec';
 // import type { Toolbar} from './actions/align/Toolbar';
 import type { ToolbarInterface } from './actions/toolbar/ToolbarInterface';
+import MainToolbar from "./actions/toolbar/MainToolbar";
 
 const dontMerge = (destination: Array<any>, source: Array<any>) => source;
 
@@ -30,6 +31,8 @@ export default class BlotFormatter {
     if (this.options.overlay.style) {
       Object.assign(this.overlay.style, this.options.overlay.style);
     }
+
+    this.toolbar = new MainToolbar();
 
     // disable native image resizing on firefox
     document.execCommand('enableObjectResizing', false, 'false'); // eslint-disable-line no-undef

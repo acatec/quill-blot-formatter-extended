@@ -21,13 +21,18 @@ export default class MainToolbar implements ToolbarInterface {
   // }
 
   create(formatter: BlotFormatter): HTMLElement {
+    console.log('Start create toolbar');
     this.formatter = formatter;
     const toolbar = document.createElement('div');
     toolbar.classList.add(formatter.options.align.toolbar.mainClassName);
     this.addToolbarStyle(formatter, toolbar);
-    const actions = formatter.getActions()
+    const actions = formatter.getActions();
+
+    console.log('formatter.getActions()');
+    console.log(actions);
 
     actions.map((action: Action) => {
+      console.log(action);
       this.addButtons(toolbar, action.getGroup());
       return true;
     });
@@ -67,6 +72,9 @@ export default class MainToolbar implements ToolbarInterface {
   }
 
   addButtons(toolbar: HTMLElement, aligner: GroupInterface) {
+    console.log('addButtons');
+    console.log(toolbar);
+    console.log(aligner);
     aligner.getVariants().forEach((alignment, i) => {
       const button = document.createElement('span');
       button.classList.add(this.formatter.options.align.toolbar.buttonClassName);

@@ -51,7 +51,7 @@ export default class BlotFormatter {
     this.repositionOverlay();
     this.createActions(spec);
     this.toolbar.create(this);
-    this.overlay.appendChild(this.toolbar);
+    this.overlay.appendChild(this.toolbar.getElement());
   }
 
   hide() {

@@ -75,7 +75,9 @@ export default class MainToolbar implements ToolbarInterface {
 
   addButtons(toolbar: HTMLElement, group: GroupInterface) {
     console.log('addButtons');
+    console.log('toolbar:');
     console.log(toolbar);
+    console.log('group:');
     console.log(group);
     group.getVariants().forEach((variant, i) => {
       const button = document.createElement('span');

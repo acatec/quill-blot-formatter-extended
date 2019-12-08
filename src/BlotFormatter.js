@@ -74,7 +74,7 @@ export default class BlotFormatter {
 
   createActions(spec: BlotSpec) {
     this.actions = spec.getActions().map((ActionClass: Class<Action>) => {
-      const action: Action = new ActionClass(this);
+      const action: Action = new ActionClass(this, this.toolbar);
       action.onCreate();
       return action;
     });

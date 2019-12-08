@@ -33,7 +33,9 @@ export default class MainToolbar implements ToolbarInterface {
 
     actions.map((action: Action) => {
       console.log(action);
-      this.addButtons(toolbar, action.getGroup());
+      if (action.getGroup()) {
+        this.addButtons(toolbar, action.getGroup());
+      }
       return true;
     });
     // this.addButtons(formatter, toolbar, aligner);
@@ -71,18 +73,18 @@ export default class MainToolbar implements ToolbarInterface {
     }
   }
 
-  addButtons(toolbar: HTMLElement, aligner: GroupInterface) {
+  addButtons(toolbar: HTMLElement, group: GroupInterface) {
     console.log('addButtons');
     console.log(toolbar);
-    console.log(aligner);
-    aligner.getVariants().forEach((alignment, i) => {
+    console.log(group);
+    group.getVariants().forEach((variant, i) => {
       const button = document.createElement('span');
       button.classList.add(this.formatter.options.align.toolbar.buttonClassName);
-      button.innerHTML = alignment.icon;
+      button.innerHTML = variant.icon;
       button.addEventListener('click', () => {
-        this.onButtonClick(button, this.formatter, alignment, aligner);
+        this.onButtonClick(button, this.formatter, variant, group);
       });
-      this.preselectButton(button, alignment, this.formatter, aligner);
+      this.preselectButton(button, variant, this.formatter, group);
       this.addButtonStyle(button, i, this.formatter);
       this.buttons.push(button);
       this.toolbar.appendChild(button);

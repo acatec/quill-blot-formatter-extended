@@ -5,6 +5,7 @@ import Action from '../actions/Action';
 import AlignAction from '../actions/toolbar/aligner/AlignAction';
 // import ResizeAction from '../actions/ResizeAction';
 import DeleteAction from '../actions/DeleteAction';
+import ResizeAction from '../actions/toolbar/resizer/ResizeAction';
 
 export default class BlotSpec {
   formatter: BlotFormatter;
@@ -16,7 +17,7 @@ export default class BlotSpec {
   init(): void {}
 
   getActions(): Class<Action>[] {
-    return [AlignAction, DeleteAction];
+    return [AlignAction, DeleteAction, ResizeAction];
     // return [AlignAction, ResizeAction, DeleteAction];
   }
 

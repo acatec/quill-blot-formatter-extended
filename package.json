@@ -1,6 +1,6 @@
 {
   "name": "quill-blot-formatter-extended",
-  "version": "1.2.13",
+  "version": "1.2.14",
   "description": "a module for the Quill text editor to allow blots to be reformatted. Built in formatters: resize and realign.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -30,7 +30,7 @@
     "deepmerge": "^2.0.0"
   },
   "peerDependencies": {
-    "quill": "^1.3.4"
+    "quill": "^1.3.7"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

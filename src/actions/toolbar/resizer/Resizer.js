@@ -20,7 +20,8 @@ export default class Resizer implements GroupInterface {
 
   constructor(options: AlignOptions) {
     this.applyStyle = options.aligner.applyStyle;
-    this.alignAttribute = options.attribute;
+    this.alignAttribute = 'size';
+    // this.alignAttribute = options.attribute;
     this.variants = {
       [SIZE_25]: {
         name: SIZE_25,
@@ -28,8 +29,12 @@ export default class Resizer implements GroupInterface {
         apply: (el: HTMLElement) => {
           this.setVariant(el, SIZE_25);
           this.setAnyStyle(el, {
-            width: '25%',
+            width: 'calc(25% - 20px)',
+            'min-height': 'calc((25vw - 20px) * 0.45)',
+            // width: '25%',
+            // 'min-height': '18.75%',
             'max-height': '',
+            height: '',
           });
         },
       },
@@ -39,8 +44,10 @@ export default class Resizer implements GroupInterface {
         apply: (el: HTMLElement) => {
           this.setVariant(el, SIZE_50);
           this.setAnyStyle(el, {
-            width: '50%',
+            width: 'calc(50% - 20px)',
+            'min-height': 'calc((50vw - 20px) * 0.45)',
             'max-height': '',
+            height: '',
           });
         },
       },
@@ -48,10 +55,12 @@ export default class Resizer implements GroupInterface {
         name: SIZE_100,
         icon: options.icons.size100,
         apply: (el: HTMLElement) => {
-          this.setVariant(el, RIGHT_ALIGN);
+          this.setVariant(el, SIZE_100);
           this.setAnyStyle(el, {
-            width: '100%',
+            width: 'calc(100% - 20px)',
+            'min-height': 'calc((100vw - 20px) * 0.45)',
             'max-height': '',
+            height: '',
           });
         },
       },
@@ -66,6 +75,7 @@ export default class Resizer implements GroupInterface {
     el.removeAttribute(this.alignAttribute);
     this.setAnyStyle(el, {
       width: '',
+      'min-height': '',
     });
   }
 
@@ -75,14 +85,6 @@ export default class Resizer implements GroupInterface {
 
   setVariant(el: HTMLElement, value: string) {
     el.setAttribute(this.alignAttribute, value);
-  }
-
-  setStyle(el: HTMLElement, display: ?string, float: ?string, margin: ?string) {
-    if (this.applyStyle) {
-      el.style.setProperty('display', display);
-      el.style.setProperty('float', float);
-      el.style.setProperty('margin', margin);
-    }
   }
 
   setAnyStyle(el: HTMLElement, options: { [string]: string }) {

@@ -4,6 +4,8 @@ import type { AlignOptions } from '../../../Options';
 import type { GroupInterface } from '../GroupInterface';
 import type { VariantInterface } from '../VariantInterface';
 
+const NAME = 'DefaultAligner';
+const TITLE = 'Выравнивание';
 const LEFT_ALIGN = 'left';
 const CENTER_ALIGN = 'center';
 const RIGHT_ALIGN = 'right';
@@ -30,7 +32,7 @@ export default class DefaultAligner implements GroupInterface {
           this.setAnyStyle(el, {
             'max-height': '',
             float: 'left',
-            clear: 'both',
+            // clear: 'both',
             display: 'inline',
             margin: '0 1em 1em 0',
             'font-size': '',
@@ -60,7 +62,7 @@ export default class DefaultAligner implements GroupInterface {
           this.setAnyStyle(el, {
             'max-height': '',
             float: 'right',
-            clear: 'both',
+            // clear: 'both',
             display: 'inline',
             margin: '0 0 1em 1em',
             'font-size': '',
@@ -91,6 +93,13 @@ export default class DefaultAligner implements GroupInterface {
         },
       },
     };
+  }
+
+  getName(): string {
+    return NAME;
+  }
+  getTitle(): string {
+    return TITLE;
   }
 
   getVariants(): VariantInterface[] {

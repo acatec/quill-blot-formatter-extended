@@ -4,13 +4,22 @@ import type { AlignOptions } from '../../../Options';
 import type { GroupInterface } from '../GroupInterface';
 import type { VariantInterface } from '../VariantInterface';
 
+const NAME = 'Resizer';
+const TITLE = 'Размер';
 const LEFT_ALIGN = 'left';
 const CENTER_ALIGN = 'center';
 const RIGHT_ALIGN = 'right';
 const INLINE = 'inline';
 const REMOVE = 'remove';
+const SIZE_ORIG = 'sizeOrig';
 const SIZE_25 = 'size25';
+const SIZE_30 = 'size30';
+const SIZE_40 = 'size40';
 const SIZE_50 = 'size50';
+const SIZE_60 = 'size60';
+const SIZE_70 = 'size70';
+const SIZE_80 = 'size80';
+const SIZE_90 = 'size90';
 const SIZE_100 = 'size100';
 
 export default class Resizer implements GroupInterface {
@@ -23,18 +32,43 @@ export default class Resizer implements GroupInterface {
     this.alignAttribute = 'size';
     // this.alignAttribute = options.attribute;
     this.variants = {
+      [SIZE_ORIG]: {
+        name: SIZE_ORIG,
+        icon: options.icons.sizeOrig,
+        apply: (el: HTMLElement) => {
+          this.setVariant(el, SIZE_ORIG);
+          this.setAnyStyle(el, {
+            width: '', 'min-height': '', 'max-height': '', height: '',
+          });
+        },
+      },
       [SIZE_25]: {
         name: SIZE_25,
         icon: options.icons.size25,
         apply: (el: HTMLElement) => {
           this.setVariant(el, SIZE_25);
           this.setAnyStyle(el, {
-            width: 'calc(25% - 20px)',
-            'min-height': 'calc((25vw - 20px) * 0.45)',
-            // width: '25%',
-            // 'min-height': '18.75%',
-            'max-height': '',
-            height: '',
+            width: '24%', 'min-height': '', 'max-height': '', height: '',
+          });
+        },
+      },
+      [SIZE_30]: {
+        name: SIZE_30,
+        icon: options.icons.size30,
+        apply: (el: HTMLElement) => {
+          this.setVariant(el, SIZE_30);
+          this.setAnyStyle(el, {
+            width: '29%', 'min-height': '', 'max-height': '', height: '',
+          });
+        },
+      },
+      [SIZE_40]: {
+        name: SIZE_40,
+        icon: options.icons.size40,
+        apply: (el: HTMLElement) => {
+          this.setVariant(el, SIZE_40);
+          this.setAnyStyle(el, {
+            width: '39%', 'min-height': '', 'max-height': '', height: '',
           });
         },
       },
@@ -44,10 +78,47 @@ export default class Resizer implements GroupInterface {
         apply: (el: HTMLElement) => {
           this.setVariant(el, SIZE_50);
           this.setAnyStyle(el, {
-            width: 'calc(50% - 20px)',
-            'min-height': 'calc((50vw - 20px) * 0.45)',
-            'max-height': '',
-            height: '',
+            width: '49%', 'min-height': '', 'max-height': '', height: '',
+          });
+        },
+      },
+      [SIZE_60]: {
+        name: SIZE_60,
+        icon: options.icons.size60,
+        apply: (el: HTMLElement) => {
+          this.setVariant(el, SIZE_60);
+          this.setAnyStyle(el, {
+            width: '58%', 'min-height': '', 'max-height': '', height: '',
+          });
+        },
+      },
+      [SIZE_70]: {
+        name: SIZE_70,
+        icon: options.icons.size70,
+        apply: (el: HTMLElement) => {
+          this.setVariant(el, SIZE_70);
+          this.setAnyStyle(el, {
+            width: '68%', 'min-height': '', 'max-height': '', height: '',
+          });
+        },
+      },
+      [SIZE_80]: {
+        name: SIZE_80,
+        icon: options.icons.size80,
+        apply: (el: HTMLElement) => {
+          this.setVariant(el, SIZE_80);
+          this.setAnyStyle(el, {
+            width: '78%', 'min-height': '', 'max-height': '', height: '',
+          });
+        },
+      },
+      [SIZE_90]: {
+        name: SIZE_90,
+        icon: options.icons.size90,
+        apply: (el: HTMLElement) => {
+          this.setVariant(el, SIZE_90);
+          this.setAnyStyle(el, {
+            width: '88%', 'min-height': '', 'max-height': '', height: '',
           });
         },
       },
@@ -57,16 +128,18 @@ export default class Resizer implements GroupInterface {
         apply: (el: HTMLElement) => {
           this.setVariant(el, SIZE_100);
           this.setAnyStyle(el, {
-            width: 'calc(100% - 20px)',
-            'min-height': 'calc((100vw - 20px) * 0.45)',
-            'max-height': '',
-            height: '',
+            width: '98%', 'min-height': '', 'max-height': '', height: '',
           });
         },
       },
     };
   }
-
+  getName(): string {
+    return NAME;
+  }
+  getTitle(): string {
+    return TITLE;
+  }
   getVariants(): VariantInterface[] {
     return Object.keys(this.variants).map(k => this.variants[k]);
   }

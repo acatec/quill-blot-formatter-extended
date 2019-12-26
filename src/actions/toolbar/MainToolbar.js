@@ -42,7 +42,7 @@ export default class MainToolbar implements ToolbarInterface {
 
   destroy() {
     this.toolbar = null;
-    this.buttons = [];
+    this.buttons = {};
   }
 
   getElement() {
@@ -69,6 +69,15 @@ export default class MainToolbar implements ToolbarInterface {
   }
 
   addButtons(toolbar: HTMLElement, group: GroupInterface) {
+    const groupNode = document.createElement('span');
+    const groupTitle = document.createElement('span');
+    groupTitle.innerHTML = group.getTitle() + ':';
+
+    groupTitle.classList.add('blot-formatter__toolbar_groupTitle');
+    groupNode.appendChild(groupTitle);
+    groupNode.classList.add(group.getName());
+    groupNode.style.setProperty('display', 'block');
+    this.buttons[group.getName()] = [];
     group.getVariants().forEach((variant, i) => {
       const button = document.createElement('span');
       button.classList.add(this.formatter.options.align.toolbar.buttonClassName);
@@ -78,9 +87,11 @@ export default class MainToolbar implements ToolbarInterface {
       });
       this.preselectButton(button, variant, this.formatter, group);
       this.addButtonStyle(button, i, this.formatter);
-      this.buttons.push(button);
-      toolbar.appendChild(button);
+      // this.buttons.push(button);
+      this.buttons[group.getName()].push(button);
+      groupNode.appendChild(button);
     });
+    toolbar.appendChild(groupNode);
   }
 
   preselectButton(
@@ -128,7 +139,7 @@ export default class MainToolbar implements ToolbarInterface {
     alignment: VariantInterface,
     aligner: GroupInterface,
   ) {
-    this.buttons.forEach((b) => { this.deselectButton(formatter, b); });
+    this.buttons[aligner.getName()].forEach((b) => { this.deselectButton(formatter, b); });
     if (aligner.isApplied(alignTarget, alignment)) {
       if (formatter.options.align.toolbar.allowDeselect) {
         aligner.clear(alignTarget);

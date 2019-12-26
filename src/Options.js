@@ -119,16 +119,58 @@ const DefaultOptions: Options = {
       remove: `
         <svg width="300" height="300" id="svgcontent" overflow="visible" viewBox="0 -15 50 80"><path d="M24,0C10.7,0 0,10.7 0,24S10.7,48 24,48S48,37.3 48,24S37.3,0 24,0zM24,41C14.6,41 7,33.4 7,24C7,20.6 8,17.4 9.8,14.7L33.3,38.2C30.6,40 27.4,41 24,41zM38.2,33.3L14.7,9.8C17.4,8 20.6,7 24,7C33.4,7 41,14.6 41,24C41,27.4 40,30.6 38.2,33.3z" style="pointer-events:inherit" id="svg_2"></path></svg>
       `,
+      sizeOrig: `
+        <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
+        <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
+        Ориг
+      </text></svg>
+      `,
       size25: `
         <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
         <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
         25%
       </text></svg>
       `,
+      size30: `
+        <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
+        <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
+        30%
+      </text></svg>
+      `,
+      size40: `
+        <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
+        <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
+        40%
+      </text></svg>
+      `,
       size50: `
         <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
         <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
         50%
+      </text></svg>
+      `,
+      size60: `
+        <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
+        <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
+        60%
+      </text></svg>
+      `,
+      size70: `
+        <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
+        <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
+        70%
+      </text></svg>
+      `,
+      size80: `
+        <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
+        <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
+        80%
+      </text></svg>
+      `,
+      size90: `
+        <svg width="300" height="300" id="svgcontent" overflow="visible" x="174.5" y="58" viewBox="0 0 180 300" style="display: inline-block; width: 24px; height: 24px; background: white; vertical-align: middle;">
+        <text data-v-15af8f3c="" x="95" y="190" fill="#000" font-family="Meiryo UI, sans-serif" font-size="120" text-anchor="middle">
+        90%
       </text></svg>
       `,
       size100: `
@@ -144,11 +186,11 @@ const DefaultOptions: Options = {
       mainClassName: 'blot-formatter__toolbar',
       mainStyle: {
         position: 'absolute',
-        top: '-12px',
+        top: '-40px',
         right: '0',
         left: '0',
         // height: '0',
-        minWidth: '100px',
+        minWidth: '315px',
         font: '12px/1.0 Arial, Helvetica, sans-serif',
         textAlign: 'center',
         color: '#333',

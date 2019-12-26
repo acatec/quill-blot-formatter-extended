@@ -63,7 +63,7 @@ export type Options = {
 const DefaultOptions: Options = {
   specs: [
     ImageSpec,
-    IframeVideoSpec,
+    // IframeVideoSpec,
   ],
   overlay: {
     className: 'blot-formatter__overlay',
